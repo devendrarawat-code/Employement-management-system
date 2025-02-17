@@ -1,15 +1,16 @@
-import { useState } from "react";
-import { setLocalStorage } from "../utils/LocalStorage";
-const Header = () => {
+
+const Header = (props) => {
 // const [username, setusername] = useState('')
 // if(!data){
 //   setusername("hello admin")
 // }else{
 //   setusername(data.first_name);
-// }
+// }\
+
 const logOut=()=>{
 localStorage.setItem('loggedInUser','')
-window.location.reload()
+props.changeUser('')
+// window.location.reload()
 }
   return (
     <div  className=" text-white w-full flex items-end justify-between">
