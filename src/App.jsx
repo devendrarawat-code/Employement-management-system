@@ -1,10 +1,11 @@
 // /* eslint-disable no-unused-vars */
-import Login from "./components/Auth/Login";
+// import Login from "./components/Auth/Login";
 import { React, useContext, useEffect, useState } from "react";
 // import { getLocalStorage } from './utils/LocalStorage'
 import AdminDashboard from "./components/Auth/DashBoard/AdminDashboard";
 import EmpolyeeDashboard from "./components/Auth/DashBoard/EmpolyeeDashboard";
 import { AuthContext } from "./context/AuthProvider";
+import Login from "./components/Auth/Login"
 
 const App = () => {
   const [userData,setUserData] = useContext(AuthContext);
@@ -47,6 +48,7 @@ const App = () => {
       {!user ? <Login handleLogin={handleLogin} /> : ""}
       {user == "admin" ? <AdminDashboard changeUser={setUser} /> : ""}
       {user == "employee" ? <EmpolyeeDashboard changeUser={setUser} data={loggedInUserData} /> : ""}
+
     </>
   );
 };
